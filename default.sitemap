@@ -5,6 +5,7 @@ sitemap default label="Test sitemap"
 		Switch item=Light_GF_LV_DinnerTable label="Light Dinner Table"
 		Switch item=Light_GF_LV_GardenWindowRight label="Light Vensterbank"
 		Switch item=Light_GF_LV_Aquarium label="Light Aquarium"
+		Switch item=Light_GF_LV_Couch label="Light Couch"
 	}
 	Frame label="Sonos" {
 		Default item=sonos_PLAY1_RINCON_B8E9375EC61401400_control label="sonos control" 
