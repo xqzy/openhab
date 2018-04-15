@@ -4,17 +4,33 @@ Group LivingRoom
 		>[localbroker:/esp-01/gpio/12:command:OFF:0], 
 		<[localbroker:/esp-01/lightState/Switch:state:MAP(onoff.map)]"
 		} 
-// Switch Light_GF_LV_DinnerTable (LivingRoom) {mqtt=">[localbroker:/esp-01/gpio/12:command:ON:1],>[localbroker:cmnd/esp-01/gpio/12:command:OFF:0],
-//	<[localbroker:stat/esp-01/lightState/Switch:state:default]
-//	"} 
-// ** this line would alllow for input back from the switch state, but doesn't make the switch work**** Switch Light_GF_LV_DinnerTable (LivingRoom) {mqtt=">[mosquitto:esp-01/1:command:*:default],<[mosquitto:esp-01/1:state:default]"} 
+		Contact Light_GF_LV_DT_OnOff "Power GF_LV_DinnerTable" 
+		{channel="network:servicedevice:192_168_0_151_80:online"}
+		Contact Light_GF_LV_DT_RespTime "Resp Time GF/LV/DT" 
+		{channel="network:servicedevice:192_168_0_151_80:latency"}
+	Switch Light_GF_LV_GardenWindowRight (LivingRoom) 
+		{mqtt=" >[localbroker:/esp-02/gpio/12:command:ON:1], 
+		>[localbroker:/esp-02/gpio/12:command:OFF:0], 
+		<[localbroker:/esp-02/lightState/Switch:state:MAP(onoff.map)]"
+		} 
+		Contact Light_GF_LV_GWR_OnOff "Power GF_LV_GardenWindowRight" 
+		{channel="network:servicedevice:192_168_0_151_80:online"}
+		Contact Light_GF_LV_GWR_RespTime "Resp Time GF/LV/GWR" 
+		{channel="network:servicedevice:192_168_0_151_80:latency"}
+	Switch Light_GF_LV_Aquarium (LivingRoom) 
+		{mqtt=" >[localbroker:/esp-03/gpio/12:command:ON:1], 
+		>[localbroker:/esp-03/gpio/12:command:OFF:0], 
+		<[localbroker:/esp-03/lightState/Switch:state:MAP(onoff.map)]"
+		} 
+		Contact Light_GF_LV_AQ_OnOff "Power GF_LV_AQ" 
+		{channel="network:servicedevice:192_168_0_151_80:online"}
+		Contact Light_GF_LV_AQ_RespTime "Resp Time GF/LV/AQ" 
+		{channel="network:servicedevice:192_168_0_151_80:latency"}
 Switch Sonos_Living "Power Sonos" {sonos="[ON:RINCON_B8E9375EC61401400:play],[OFF:RINCON_B8E9375EC61401400:stop]"}
 Dimmer Sonos_Living_Vol "Volume Sonos" {sonos="[RINCON_B8E9375EC61401400:volume]"}
 Number Weather_Temperature "Outside temperature [%.1f C]" {channel="yahooweather:weather:82a2d84c:temperature"}
 Number Weather_Humidity "Humidity [%.0f %%]" {channel="yahooweather:weather:82a2d84c:humidity"}
 Number Weather_Pressure "Pressure [%.0f mbar]" {channel="yahooweather:weather:82a2d84c:pressure"}
-Contact Light_GF_LV_DT_OnOff "Power GF_LV_DinnerTable" {channel="network:servicedevice:192_168_0_151_80:online"}
-Contact Light_GF_LV_DT_RespTime "Resp Time GF/LV/DT" {channel="network:servicedevice:192_168_0_151_80:latency"}
 Switch Presence_Mobile_Rob "Rob's Mobile" <network> {channel="network:servicedevice:192_168_0_27_80:online" }
 DateTime Lastseen_Mobile_Rob "Rob last seen [%1$ta %1$tR]" <network> {channel="network:servicedevice:192_168_0_27_80:lastseen" }
 

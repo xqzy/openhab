@@ -1,0 +1,2 @@
+sudo cp default.items /etc/openhab2/items
+sudo cp default.sitemap /etc/openhab2/sitemaps
