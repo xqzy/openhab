@@ -1,5 +1,9 @@
 Group LivingRoom
- Switch Light_GF_LV_DinnerTable (LivingRoom) {mqtt=" >[localbroker:/esp-01/gpio/12:command:ON:1], >[localbroker:/esp-01/gpio/12:command:OFF:0], <[localbroker:/esp-01/lightState/Switch:state:MAP(onoff.map)] "} 
+	Switch Light_GF_LV_DinnerTable (LivingRoom) 
+		{mqtt=" >[localbroker:/esp-01/gpio/12:command:ON:1], 
+		>[localbroker:/esp-01/gpio/12:command:OFF:0], 
+		<[localbroker:/esp-01/lightState/Switch:state:MAP(onoff.map)]"
+		} 
 // Switch Light_GF_LV_DinnerTable (LivingRoom) {mqtt=">[localbroker:/esp-01/gpio/12:command:ON:1],>[localbroker:cmnd/esp-01/gpio/12:command:OFF:0],
 //	<[localbroker:stat/esp-01/lightState/Switch:state:default]
 //	"} 
