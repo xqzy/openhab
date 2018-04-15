@@ -1,0 +1,13 @@
+rule "Switch-off Aquarium Light"
+when
+	Time cron "0 25 23 * * ?" 
+then
+	Light_GF_LV_Aquarium.sendCommand(OFF)
+end	
+
+rule "Switch-on Aquarium Light"
+when
+	Time cron "0 25 10 * * ?" 
+then
+	Light_GF_LV_Aquarium.sendCommand(ON)
+end	

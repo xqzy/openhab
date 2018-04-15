@@ -35,6 +35,15 @@ Group LivingRoom
 		{channel="network:servicedevice:192_168_0_151_80:online"}
 		Contact Light_GF_LV_CO "Resp Time GF/LV/CO" 
 		{channel="network:servicedevice:192_168_0_151_80:latency"}
+	Switch Light_GF_LV_Dressoir (LivingRoom) 
+		{mqtt=" >[localbroker:/esp-05/gpio/12:command:ON:1], 
+		>[localbroker:/esp-05/gpio/12:command:OFF:0], 
+		<[localbroker:/esp-05/lightState/Switch:state:MAP(onoff.map)]"
+		} 
+		Contact Light_GF_LV_DS_OnOff "Power GF_LV_DS" 
+		{channel="network:servicedevice:192_168_0_151_80:online"}
+		Contact Light_GF_LV_DS "Resp Time GF/LV/DS" 
+		{channel="network:servicedevice:192_168_0_151_80:latency"}
 Switch Sonos_Living "Power Sonos" {sonos="[ON:RINCON_B8E9375EC61401400:play],[OFF:RINCON_B8E9375EC61401400:stop]"}
 Dimmer Sonos_Living_Vol "Volume Sonos" {sonos="[RINCON_B8E9375EC61401400:volume]"}
 Number Weather_Temperature "Outside temperature [%.1f C]" {channel="yahooweather:weather:82a2d84c:temperature"}
