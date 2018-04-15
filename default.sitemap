@@ -1,0 +1,28 @@
+sitemap default label="Test sitemap"
+{
+//	Switch item=Licht_Schakelaar_01  label="test schakelaar" 
+	Frame label="Living Room" {
+		Switch item=Light_GF_LV_DinnerTable label="Light Dinner Table"
+	}
+	Frame label="Sonos" {
+		Default item=sonos_PLAY1_RINCON_B8E9375EC61401400_control label="sonos control" 
+		Switch item=Sonos_Living label="sonos woonkamer aan/uit"
+		Slider item=Sonos_Living_Vol label="sonos woonkamer volume"
+	}
+	Frame label="People" {
+ 		Switch item=Presence_Mobile_Rob 
+ 		Text item=Lastseen_Mobile_Rob  
+	}
+
+	Frame label="Weather"{
+		Text item=Weather_Temperature
+		Text item=Weather_Humidity
+		Text item=Weather_Pressure
+	}
+	Frame label="System"{
+	        Text item=Light_GF_LV_DT_OnOff label="Light Dinner Table: [%s]"
+	        Text item=Light_GF_LV_DT_RespTime label="response time: [%f]"
+	}
+
+}
+
